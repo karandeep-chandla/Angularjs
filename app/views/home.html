@@ -1,0 +1,254 @@
+<section class="main-banner" style="background-image:url(/images/main-banner.jpg);"><!--Main Banner-->
+  <div class="overlay">
+      <div class="banner-description">
+          <div class="kentico-logo"><img src="/images/kentico-logo.png" width="188" height="67" alt="Kentico"></div>
+          <h1>CMS, E-commerce, and<br/>Online Marketing platform</h1>
+            <div class="get-started"><a href="javascript:void(0);" title="Get Started">Get Started</a></div>
+      </div>
+    </div>  
+<!--Main Banner ends--></section>
+
+<section class="why-kentico text-center"><!--Why Kentico-->
+    <div class="container">
+      <div class="row">
+        data length is {{phones.length}}
+            <h2>Why Kentico</h2>
+            <p>Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
+            <div ng-repeat="adv in k_adv" class="col-md-3">
+                <div class="row">
+                    <div class="column">
+                        <div class="icon-frame">
+                            <img src="{{adv.img}}" width="71" height="59" alt="Web">
+                        </div>
+                        <h3>{{adv.heading}}</h3> 
+                        <p>{{adv.text}}</p>
+                        <div class="read-more"><a href="why-kentico.html#management" title="Read more">Read more</a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-3">
+                <div class="row">
+                    <div class="column">
+                        <div class="icon-frame">
+                            <img src="/images/ecommerce-icon.svg" width="64" height="59" alt="Ecommerce">
+                        </div>
+                        <h3>E-commerce</h3> 
+                        <p>Praesent dapibus, neque id curs us faucibus, tortor neque egestas augue, eu vulputate magn</p>
+                        <div class="read-more"><a href="why-kentico.html#ecommerce" title="Read more">Read more</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="column">
+                        <div class="icon-frame">
+                            <img src="/images/marketing-icon.svg" width="63" height="60" alt="Marketing">
+                        </div>
+                        <h3>Online Marketing</h3> 
+                        <p>Praesent dapibus, neque id curs us faucibus, tortor neque egestas augue, eu vulputate magn</p>
+                        <div class="read-more"><a href="why-kentico.html#marketing" title="Read more">Read more</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="column">
+                        <div class="icon-frame">
+                            <img src="/images/communities-icon.svg" width="87" height="84" alt="Communities">
+                        </div>
+                        <h3>Online Communities</h3> 
+                        <p>Praesent dapibus, neque id curs us faucibus, tortor neque egestas augue, eu vulputate magn</p>
+                        <div class="read-more"><a href="why-kentico.html#communities" title="Read more">Read more</a></div>
+                    </div>
+                </div>
+            </div> -->
+        </div>    
+    </div>
+<!--Why Kentico ends--></section>
+
+<section class="work-frame" style="background-image:url(/images/work-bg.jpg);"><!--Latest Work-->
+  <div class="work-overlay">
+      <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="latest-work">
+                            <h2>Our<br/>Latest Work</h2>
+                            <p>Donec odio uisque volutpat mattis eros ullam malesuada erat</p>
+                            <div class="view-all"><a href="work.html" title="View all">View all</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- <div class="slider">
+                          <div class="slide"><img src="/images/slide-01.png" width="366" height="518" alt="Slide 01"></div>
+                          <div class="slide"><img src="/images/slide-02.png" width="366" height="518" alt="Slide 02"></div>
+                          <div class="slide"><img src="/images/slide-01.png" width="366" height="518" alt="Slide 03"></div>
+                          <div class="slide"><img src="/images/slide-02.png" width="366" height="518" alt="Slide 04"></div>
+                          <div class="slide"><img src="/images/slide-01.png" width="366" height="518" alt="Slide 05"></div>
+                          <div class="slide"><img src="/images/slide-02.png" width="366" height="518" alt="Slide 06"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Latest Work ends--></section>
+
+<section class="why-us"><!--Why us-->
+  <div class="container">
+      <div class="row">
+            <h2 class="text-center">Why Us</h2>
+            <p class="text-center">We have been working with Kentico since 2008 and we've built more<br/>than 200 websites on the platform.</p>
+            <div class="gray-frame">
+              <div ng-repeat="why in k_why" class="why-column">
+                    <div class="icon">
+                        <img src="{{why.img}}" width="61" height="52" alt="Integration">
+                    </div>
+                    <div class="why-column-detail">
+                        <h3>{{why.heading}}</h3> 
+                        <p>{{why.text}}</p>
+                    </div>
+                </div>
+              <!-- <div class="why-column">
+                    <div class="icon">
+                        <img src="/images/intranets.svg" width="61" height="55" alt="Intranets">
+                    </div>
+                    <div class="why-column-detail">
+                        <h3>Intranets</h3>
+                        <p>The Kentico Intranet solution provides a compelling alternative to the bloatware that is Microsoft Sharepoint. We have successfully delivered Intranets...</p>
+                    </div>
+              </div> -->
+            </div>
+            <div class="orange-frame text-center">
+              <img src="{{expert.img}}" width="51" height="61" alt="User">
+                <h3>{{expert.heading}}</h3>
+                <p>{{expert.text}}</p>
+                <div class="orange-more"><a href="why-us" title="Read more">Read more</a></div>
+            </div>
+
+            <div class="gray-frame">
+              <div ng-repeat="pro in k_pro" class="why-column">
+                    <div class="icon">
+                        <img src="{{pro.img}}" width="61" height="52" alt="Ecommerce">
+                    </div>
+                    <div class="why-column-detail">
+                        <h3>{{pro.heading}}</h3> 
+                        <p>{{pro.text}}</p>
+                    </div>
+                </div>
+              <!-- <div class="why-column">
+                    <div class="icon">
+                        <img src="/images/project-icon.svg" width="61" height="59" alt="Delivered">
+                    </div>
+                    <div class="why-column-detail">
+                        <h3>Project Delivered</h3>
+                        <p>We've built more than 200 websites on the platform. This wealth of experience has meant that we've come across almost every challenging...</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>        
+<!--Why us ends--></section>
+
+<section class="testimonial text-center"><!--Testimonial-->
+  <div class="container">
+      <div class="row">
+            <h2>Testimonials</h2>
+            <p>Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
+            <!-- <div class="testimonial-slider">
+                <ul class="bxslider">
+                    <li>
+                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
+                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
+                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
+                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
+                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </div>        
+<!--Testimonial ends--></section>
+
+<section class="get-touch"><!--Get in Touch-->
+  <div class="container">
+      <div class="row">
+          <h2 class="text-center">Get in Touch</h2>
+            <p class="text-center">Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
+            <div class="form">
+                <form autocomplete="off">
+                    <fieldset>
+                      <div class="grid460">
+                            <div class="form-group">      
+                                <input type="text" class="form-control" name="name" id="name" tabindex="1">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Your Name</label>
+                            </div>
+                        </div>
+                        <div class="grid460 pull-right">
+                            <div class="form-group">  
+                                <input type="text" class="form-control" name="cname" id="cname" tabindex="2">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Company Name</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>    
+                        <div class="grid460">
+                            <div class="form-group">       
+                                <input type="email" class="form-control" name="email" id="email" tabindex="3">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Email address</label>
+                            </div>
+                        </div>
+                        <div class="grid460 pull-right">
+                            <div class="form-group">       
+                                <input type="text" class="form-control" name="contact" id="contact" tabindex="4">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Contact No.</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>  
+                        <div class="form-group">       
+                            <textarea class="form-control" name="message" id="message" tabindex="5"></textarea>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Message</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>    
+                        <div class="controls">
+                            <button type="submit" class="button signup button-orange" title="Submit">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--Get in Touch ends--></section>

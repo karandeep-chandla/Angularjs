@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- build:css(.) styles/vendor.css -->
+<!-- bower:css -->
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:css(.tmp) styles/main.css -->
+<!-- <link rel="stylesheet" href="styles/main.css"> -->
+<link href="styles/bootstrap.min.css" rel="stylesheet">
+<link href="styles/custom-bootstrap.css" rel="stylesheet">
+<link href="styles/jquery.bxslider.css" rel="stylesheet">
+<!-- endbuild -->
+</head>
+<body ng-app="kenticoApp">
+<!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<header><!--header-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="close-menu"><a href="javascript:void(0);" title="Close">Close</a></div>
+                <a class="navbar-brand" href="/#/" title="newpathweb"><img src="images/logo.png" width="168" height="110" alt="Logo"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul id="cl-effect-11" class="cl-effect-11 nav navbar-nav navbar-right">             
+                    <li ng-repeat="nav in navs" ng-class="set_active(nav.url) ? 'active' : ''"><a href="#/{{nav.url}}" title="{{nav.d_name}}" data-hover="{{nav.d_name}}">{{nav.d_name}}</a></li>
+                    <!-- <li><a href="/#/why-kentico" title="Why Kentico" data-hover="Why Kentico">Why Kentico</a></li>
+                    <li><a href="/#/work" title="Work" data-hover="Work">Work</a></li>
+                    <li><a href="/#/why-us" title="Why Us" data-hover="Why Us">Why Us</a></li>
+                    <li><a href="/#/get-in-touch" title="Get In Touch" data-hover="Get In Touch">Get In Touch</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--header ends--></header>
+
+
+<div ng-view=""></div>
+
+
+<footer><!--Footer-->
+  <div class="container">
+      <div class="row">
+          <p>Copyright &amp; NewpathWeb Pty Ltd Melbourne 2013. All rights reserved.</p>
+            <ul>
+                <li><a href="javascript:void(0);" title="Facebook"><span class="social-icon facebook">Facebook</span></a></li>
+                <li><a href="javascript:void(0);" title="Facebook"><span class="social-icon google">Google Plus</span></a></li>
+                <li><a href="javascript:void(0);" title="Facebook"><span class="social-icon linkedin">Linkedin</span></a></li>
+            </ul>
+        </div>
+    </div>
+<!--Footer ends--></footer>
+
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/why-kentico.js"></script>
+<script src="scripts/controllers/work.js"></script>
+<script src="scripts/controllers/why-us.js"></script>
+<script src="scripts/controllers/get-in-touch.js"></script>
+<script src="scripts/services/service.js"></script>
+
+
+<!-- endbuild -->
+</body>
+</html>
