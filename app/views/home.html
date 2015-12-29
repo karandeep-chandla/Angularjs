@@ -11,7 +11,6 @@
 <section class="why-kentico text-center"><!--Why Kentico-->
     <div class="container">
       <div class="row">
-        data length is {{phones.length}}
             <h2>Why Kentico</h2>
             <p>Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
             <div ng-repeat="adv in k_adv" class="col-md-3">
@@ -197,11 +196,11 @@
           <h2 class="text-center">Get in Touch</h2>
             <p class="text-center">Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
             <div class="form">
-                <form autocomplete="off">
+                <form autocomplete="off" ng-submit="submit_form(contactUs)">
                     <fieldset>
                       <div class="grid460">
                             <div class="form-group">      
-                                <input type="text" class="form-control" name="name" id="name" tabindex="1">
+                                <input type="text" class="form-control" ng-model="contactUs.name" name="name" id="name" tabindex="1">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Your Name</label>
@@ -209,7 +208,7 @@
                         </div>
                         <div class="grid460 pull-right">
                             <div class="form-group">  
-                                <input type="text" class="form-control" name="cname" id="cname" tabindex="2">
+                                <input type="text" class="form-control" ng-model="contactUs.company" name="cname" id="cname" tabindex="2">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Company Name</label>
@@ -219,7 +218,7 @@
                     <fieldset>    
                         <div class="grid460">
                             <div class="form-group">       
-                                <input type="email" class="form-control" name="email" id="email" tabindex="3">
+                                <input type="email" class="form-control" ng-model="contactUs.email" name="email" id="email" tabindex="3">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Email address</label>
@@ -227,7 +226,7 @@
                         </div>
                         <div class="grid460 pull-right">
                             <div class="form-group">       
-                                <input type="text" class="form-control" name="contact" id="contact" tabindex="4">
+                                <input type="text" class="form-control" ng-model="contactUs.contact" name="contact" id="contact" tabindex="4">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Contact No.</label>
@@ -236,7 +235,7 @@
                     </fieldset>
                     <fieldset>  
                         <div class="form-group">       
-                            <textarea class="form-control" name="message" id="message" tabindex="5"></textarea>
+                            <textarea class="form-control" ng-model="contactUs.message" name="message" id="message" tabindex="5"></textarea>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>Message</label>
