@@ -5,10 +5,13 @@
 <title></title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width">
+<link rel="icon" href="/images/favicon.gif" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.gif" type="image/x-icon" />
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <!-- build:css(.) styles/vendor.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+<link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:css(.tmp) styles/main.css -->
@@ -16,6 +19,7 @@
 <link href="styles/bootstrap.min.css" rel="stylesheet">
 <link href="styles/custom-bootstrap.css" rel="stylesheet">
 <link href="styles/jquery.bxslider.css" rel="stylesheet">
+
 <!-- endbuild -->
 </head>
 <body ng-app="kenticoApp">
@@ -39,19 +43,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul id="cl-effect-11" class="cl-effect-11 nav navbar-nav navbar-right">             
                     <li ng-repeat="nav in navs" ng-class="set_active(nav.url) ? 'active' : ''"><a href="#/{{nav.url}}" title="{{nav.d_name}}" data-hover="{{nav.d_name}}">{{nav.d_name}}</a></li>
-                    <!-- <li><a href="/#/why-kentico" title="Why Kentico" data-hover="Why Kentico">Why Kentico</a></li>
-                    <li><a href="/#/work" title="Work" data-hover="Work">Work</a></li>
-                    <li><a href="/#/why-us" title="Why Us" data-hover="Why Us">Why Us</a></li>
-                    <li><a href="/#/get-in-touch" title="Get In Touch" data-hover="Get In Touch">Get In Touch</a></li> -->
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
 <!--header ends--></header>
-
-
 <div ng-view=""></div>
-
 
 <footer><!--Footer-->
   <div class="container">
@@ -81,19 +78,44 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/home.js"></script>
 <script src="scripts/controllers/why-kentico.js"></script>
 <script src="scripts/controllers/work.js"></script>
 <script src="scripts/controllers/why-us.js"></script>
-<script src="scripts/controllers/get-in-touch.js"></script>
+<script src="scripts/controllers/get-touch.js"></script>
+
 <script src="scripts/services/homeService.js"></script>
+<script src="scripts/services/kenticoService.js"></script>
+<script src="scripts/services/workService.js"></script>
+<script src="scripts/services/whyService.js"></script>
+<script src="scripts/services/contactService.js"></script>
 
 
 <!-- endbuild -->
+
+<script>
+    $(".navbar-toggle").click(function(){
+        $(".navbar-collapse").animate({'right': '0px'}, 500);
+        $("body").animate({'right': '200px'}, 500);
+        $(".close-menu").addClass("close-button");
+        $(".navbar-toggle .icon-bar").css('display', 'none');
+        $(".navbar-toggle").css('display', 'none');
+    });
+    
+    $(".close-menu").click(function(){
+        $(".navbar-collapse").animate({'right': '-200px'}, 500);
+        $("body").animate({'right': '0px'}, 500);
+        $(".close-menu").removeClass("close-button");
+        $(".navbar-toggle").css('display', 'block');
+        $(".navbar-toggle .icon-bar").css('display', 'block');
+    });  
+</script>
 </body>
 </html>

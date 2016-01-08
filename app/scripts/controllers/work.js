@@ -8,10 +8,11 @@
  * Controller of the kenticoApp
  */
 angular.module('kenticoApp')
-  .controller('WorkCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('WorkCtrl', function ($scope, workKentico, $http) {
+    
+    workKentico.works().then(function(data){
+      $scope.k_work = data.works;
+	  $scope.work_ban = data.work_ban;
+    })
+
   });

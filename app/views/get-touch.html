@@ -1,0 +1,80 @@
+<section class="inner-banner text-center"><!--Inner Banner-->
+	<h1>{{touch.heading}}</h1>
+    <p>{{touch.text}}</p>
+<!--Inner Banner ends--></section>
+
+<section class="contact-area"><!--Contact Area-->
+	<div class="container">
+    	<div class="row">
+        	<h2>{{hear.heading}}</h2>
+      		<div class="col-md-8">
+                <div class="row">
+                	<div class="contact-frame"><!--Contact Form-->
+                        <div class="form">
+                            <form autocomplete="off" ng-submit="submit_form(getTouch)">
+                                <fieldset>
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>Your Name</label>
+                                        <input ng-model="user.name">
+                                    </md-input-container>
+                                    <md-input-container class="md-block" flex-gt-sm>
+                                        <label>Company Name</label>
+                                        <input ng-model="theMax">
+                                    </md-input-container>
+                                    <md-input-container>
+                                      <label>Email address</label>
+                                      <input required name="Email" ng-model="project.Email">
+                                      <div ng-messages="submitted && projectForm.Email.$error">
+                                        <div ng-message="required">This is required.</div>
+                                      </div>
+                                    </md-input-container>
+                                    <md-input-container class="md-block">
+                                      <label>Contact No.</label>
+                                      <input ng-model="user.contact">
+                                    </md-input-container>
+                                    <md-input-container class="md-block">
+                                      <label>Subject</label>
+                                      <input ng-model="user.subject">
+                                    </md-input-container>
+                                    <md-input-container class="md-block">
+                                      <label>Message</label>
+                                      <textarea ng-model="user.message" columns="1" rows="5"></textarea>
+                                    </md-input-container>
+                                    <md-button class="button button-orange" ng-click="acceptOffer();"><a href="javascript:void(0);" title="Submit">Submit</a></md-button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    
+                    <!--Contact Form ends--></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            	<div class="row">
+                	<div class="contact-listing">
+                        <ul>
+                            <li>
+                                <h3>Call :</h3>
+                                <p>1300 761 806</p>
+                            </li>
+                            <li>
+                                <h3>Email :</h3>
+                                <p><a href="mailto:info@newpathweb.com.au" title="info@newpathweb.com.au">info@newpathweb.com.au</a></p>
+                            </li>
+                            <li>
+                                <h3>Address :</h3>
+                                <p>Level 8, 350 Collins Street Melbourne, VIC, 3000</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Contact Area ends--></section>
+
+<section class="contact-map" style="background-image:url(/images/contact-map.jpg);">
+	<ul>
+    	<li>We are here</li>
+        <li>Level 8, 350 Collins Street<br/>Melbourne, VIC, 3000</li>
+    </ul>
+</section>

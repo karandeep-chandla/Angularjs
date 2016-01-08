@@ -1,25 +1,23 @@
 <section class="inner-banner text-center"><!--Inner Banner-->
-	<h1>Why Kentico</h1>
-    <p>Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis. </p>
+	<h1>{{ken_ban.heading}}</h1>
+    <p>{{ken_ban.text}}</p>
 <!--Inner Banner ends--></section>
 
 <section class="content-area">
 	<div class="container">
     	<div class="row">
-        	<h2>Powerful integrated marketing solution</h2>
-      		<section id="management" class="content-management">
-            	<div class="content-descp">
-                	<h3>Web Content Management</h3>
-                    <p>Free time, talent, and resources for what matters! The Kentico Web Content Management solution, not only cuts your development time in half by delivering much more easy-to-use, ready-to-go sophistication than any other vendor, but is the rock-solid, affordable choice for businesses of all size.</p>
+        	<h2>{{pow_hdg.heading}}</h2>
+      		<section ng-repeat="pow in k_pow track by $index" class="content-management"><!-- define $index on loop for specific changes ng-repeat="track by $index" -->
+            	<div class="content-descp" ng-class="alignContent($index)">
+                	<h3>{{pow.heading}}</h3>
+                    <p>{{pow.text}}</p>
                     <ul>
-                    	<li>Ready in half the time</li> 
-                        <li>Right-first-time technology</li>
-						<li>Plug-and-play success</li>
+                    	<li ng-repeat= "content in pow.listCont">{{content}}</li> 
                     </ul>
                 </div>
-                <div class="banner pull-right"><img src="/images/management-banner.png" width="416" height="304" alt="Web Content Management"></div>
+                <div class="banner" ng-class="alignImage($index)"><img src="{{pow.img}}" alt=""></div>
             </section>
-            <section id="ecommerce" class="content-management">
+            <!-- <section id="ecommerce" class="content-management">
             	<div class="content-descp pull-right">
                 	<h3>E-commerce</h3>
                     <p>No specification too high or deadline too tight! The Kentico E-commerce solution is your fast track to sophisticated online stores that are easy to manage and "wow" customers.  With dozens of proven plug-and-play components, you can focus on brilliant configuration and customization, not</p>
@@ -54,63 +52,57 @@
                     </ul>
                 </div>
                 <div class="banner pull-left"><img src="/images/communities-banner.png" width="362" height="336" alt="Online Communities"></div>
-            </section>
+            </section> -->
         </div>
     </div>
 </section>
 
 <section class="get-touch"><!--Get in Touch-->
-	<div class="container">
-    	<div class="row">
-        	<h2 class="text-center">Get in Touch</h2>
-            <p class="text-center">Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
+  <div class="container">
+      <div class="row">
+          <h2 class="text-center">{{touch_hdg.heading}}</h2>
+            <p class="text-center">{{touch_hdg.text}}</p>
             <div class="form">
-                <form autocomplete="off">
+                <form autocomplete="off" ng-submit="submit_form(contactUs)">
                     <fieldset>
-                    	<div class="grid460">
-                            <div class="form-group">      
-                                <input type="text" class="form-control" name="name" id="name" tabindex="1">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
+                      <div class="grid460">
+                            <md-input-container class="md-block" flex-gt-sm>
                                 <label>Your Name</label>
-                            </div>
+                                <input ng-model="user.name">
+                            </md-input-container>
                         </div>
                         <div class="grid460 pull-right">
-                            <div class="form-group">  
-                                <input type="text" class="form-control" name="cname" id="cname" tabindex="2">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
+                            <md-input-container class="md-block" flex-gt-sm>
                                 <label>Company Name</label>
-                            </div>
+                                <input ng-model="theMax">
+                            </md-input-container>
                         </div>
-                   </fieldset>
-                   <fieldset>     
+                    </fieldset>
+                    <fieldset>    
                         <div class="grid460">
-                            <div class="form-group">       
-                                <input type="email" class="form-control" name="email" id="email" tabindex="3">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Email address</label>
-                            </div>
+                            <md-input-container>
+                              <label>Email address</label>
+                              <input required name="Email" ng-model="project.Email">
+                              <div ng-messages="submitted && projectForm.Email.$error">
+                                <div ng-message="required">This is required.</div>
+                              </div>
+                            </md-input-container>
                         </div>
                         <div class="grid460 pull-right">
-                            <div class="form-group">       
-                                <input type="text" class="form-control" name="contact" id="contact" tabindex="4">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Contact No.</label>
-                            </div>
+                            <md-input-container class="md-block">
+                              <label>Contact No.</label>
+                              <input ng-model="user.contact">
+                            </md-input-container>
+
                         </div>
-                   </fieldset>
-                   <fieldset>     
-                        <div class="form-group">       
-                            <textarea class="form-control" name="message" id="message" tabindex="5"></textarea>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Message</label>
-                        </div>
-                   </fieldset>
-                   <fieldset>     
+                    </fieldset>
+                    <fieldset>  
+                        <md-input-container class="md-block">
+                          <label>Message</label>
+                          <textarea ng-model="user.message" columns="1" rows="5"></textarea>
+                        </md-input-container>
+                    </fieldset>
+                    <fieldset>    
                         <div class="controls">
                             <button type="submit" class="button signup button-orange" title="Submit">Submit</button>
                         </div>

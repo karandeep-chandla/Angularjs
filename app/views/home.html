@@ -1,27 +1,71 @@
+<script src="/js/jquery.bxslider.min.js"></script>
+<script>
+$(document).ready(function(){   
+    
+    $('.slider').bxSlider({
+        slideWidth: 366,
+        minSlides: 2,
+        maxSlides: 3,
+        moveSlides: 1,
+        slideMargin: 32,
+        pager: false
+    });
+  
+    $('.bxslider').bxSlider({
+      auto: true,
+      controls: false,
+      pause: 7000,
+      adaptiveHeight: true,
+      autoControls: false
+    });
+    
+    var slider2;    
+    function bxslider(){
+        var width = $(document).width();
+        if(width>=992){
+            var slider2=$('.bxslider').bxSlider({
+                slideWidth:800
+            });
+    
+        }
+    }
+
+    $(window).on("orientationchange load resize", function () {
+        bxslider();
+    });
+    
+});
+
+</script>
+
 <section class="main-banner" style="background-image:url(/images/main-banner.jpg);"><!--Main Banner-->
   <div class="overlay">
       <div class="banner-description">
-          <div class="kentico-logo"><img src="/images/kentico-logo.png" width="188" height="67" alt="Kentico"></div>
-          <h1>CMS, E-commerce, and<br/>Online Marketing platform</h1>
-            <div class="get-started"><a href="javascript:void(0);" title="Get Started">Get Started</a></div>
+          <div class="kentico-logo"><img src="{{home_main.img}}" width="188" height="67" alt="Kentico"></div>
+          <h1>{{home_main.heading}}</h1>
+          <!-- <div class="get-started"><a href="javascript:void(0);" title="Get Started">Get Started</a></div> -->
+          <md-button class="get-started"><a href="javascript:void(0);" title="Get Started">Get Started</a></md-button>
       </div>
     </div>  
 <!--Main Banner ends--></section>
 
 <section class="why-kentico text-center"><!--Why Kentico-->
     <div class="container">
-      <div class="row">
-            <h2>Why Kentico</h2>
-            <p>Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
-            <div ng-repeat="adv in k_adv" class="col-md-3">
+        <div class="row">
+            
+            <h2>{{k_hdg.heading}}</h2>
+            <p>{{k_hdg.text}}</p>
+            
+            <div ng-repeat="adv in k_adv track by $index" class="col-md-3"><!-- define $index on loop for specific changes ng-repeat="track by $index" -->
                 <div class="row">
-                    <div class="column">
+                    <div class="column" ng-class="$index == 0 ? 'first-column' : ''"><!-- if first column has no line then  ng-class="$index == 0 ? 'first-column' : ''" -->
                         <div class="icon-frame">
-                            <img src="{{adv.img}}" width="71" height="59" alt="Web">
+                            <img src="{{adv.img}}" width="71" height="59" alt="">
                         </div>
                         <h3>{{adv.heading}}</h3> 
                         <p>{{adv.text}}</p>
-                        <div class="read-more"><a href="why-kentico.html#management" title="Read more">Read more</a></div>
+                        <!-- <div class="read-more"><a href="why-kentico.html#management" title="Read more">Read more</a></div> -->
+                        <md-button class="read-more"><a href="javascript:void(0);" title="Read more">Read more</a></md-button>
                     </div>
                 </div>
             </div>
@@ -74,18 +118,19 @@
                         <div class="latest-work">
                             <h2>Our<br/>Latest Work</h2>
                             <p>Donec odio uisque volutpat mattis eros ullam malesuada erat</p>
-                            <div class="view-all"><a href="work.html" title="View all">View all</a></div>
+                            <!-- <div class="view-all"><a href="work.html" title="View all">View all</a></div> -->
+                            <md-button class="view-all"><a href="javascript:void(0);" title="View all">View all</a></md-button>
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <!-- <div class="slider">
+                        <div class="slider">
                           <div class="slide"><img src="/images/slide-01.png" width="366" height="518" alt="Slide 01"></div>
                           <div class="slide"><img src="/images/slide-02.png" width="366" height="518" alt="Slide 02"></div>
                           <div class="slide"><img src="/images/slide-01.png" width="366" height="518" alt="Slide 03"></div>
                           <div class="slide"><img src="/images/slide-02.png" width="366" height="518" alt="Slide 04"></div>
                           <div class="slide"><img src="/images/slide-01.png" width="366" height="518" alt="Slide 05"></div>
                           <div class="slide"><img src="/images/slide-02.png" width="366" height="518" alt="Slide 06"></div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,8 +141,8 @@
 <section class="why-us"><!--Why us-->
   <div class="container">
       <div class="row">
-            <h2 class="text-center">Why Us</h2>
-            <p class="text-center">We have been working with Kentico since 2008 and we've built more<br/>than 200 websites on the platform.</p>
+            <h2 class="text-center">{{expert_hdg.heading}}</h2>
+            <p class="text-center">{{expert_hdg.text}}</p>
             <div class="gray-frame">
               <div ng-repeat="why in k_why" class="why-column">
                     <div class="icon">
@@ -122,7 +167,8 @@
               <img src="{{expert.img}}" width="51" height="61" alt="User">
                 <h3>{{expert.heading}}</h3>
                 <p>{{expert.text}}</p>
-                <div class="orange-more"><a href="why-us" title="Read more">Read more</a></div>
+                <!-- <div class="orange-more"><a href="why-us" title="Read more">Read more</a></div> -->
+                <md-button class="orange-more"><a href="javascript:void(0);" title="Read more">Read more</a></md-button>
             </div>
 
             <div class="gray-frame">
@@ -152,10 +198,47 @@
 <section class="testimonial text-center"><!--Testimonial-->
   <div class="container">
       <div class="row">
-            <h2>Testimonials</h2>
-            <p>Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
-            <!-- <div class="testimonial-slider">
+            <h2>{{test_hdg.heading}}</h2>
+            <p>{{test_hdg.text}}</p>
+            <div class="testimonial-slider">
+                <!-- <div higgidy-carousel='images' timeout="10000">
+                  <ul higgidy-carousel-images>
+                    <li ng-repeat="image in images">
+                        <div class="user"><img ng-src="{{image.src}}" width="71" height="71" alt="{{img.alt}}"></div>
+                        <h3><span class="orange-text">{{image.username}}</span><br/>{{image.userProfile}}</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> {{image.slideContent}} <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
+
+
+                  </ul>
+
+                  <nav class="links">
+                    <ul>
+                      <li ng-repeat="image in images">
+                        <a href="" ng-click="show($index)" ng-class="{selected: carousel.current == $index}">
+                          {{$index}}
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div> -->
                 <ul class="bxslider">
+                    <li ng-repeat="slide in slides">
+                        <div class="user"><img src="{{slide.src}}" width="71" height="71" alt="{{slide.alt}}"></div>
+                        <h3><span class="orange-text">{{slide.username}}</span><br/>{{slide.userProfile}}</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> {{slide.slideContent}} <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
+                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
+                        <div class="content-frame">
+                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
+                        </div>
+                    </li>
                     <li>
                         <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
                         <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
@@ -163,29 +246,16 @@
                             <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
                         </div>
                     </li>
-                     <li>
-                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
-                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
-                        <div class="content-frame">
-                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
-                        </div>
-                    </li>
-                     <li>
+                    <li>
                         <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
                         <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
                         <div class="content-frame">
                             <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
                         </div>
-                    </li>
-                     <li>
-                        <div class="user"><img src="/images/testimonial-user.jpg" width="71" height="71" alt="User"></div>
-                        <h3><span class="orange-text">Rosslyn Tebbutt</span><br/>Founder, SampleBoard</h3>
-                        <div class="content-frame">
-                            <p><span class="left-quote"><img src="/images/quote-up.svg" width="48" height="45" alt="Quote"></span> They were able to create exactly what we wanted and were willing to think outside the box. We wanted something different and they produced it! <span class="right-quote"><img src="/images/quote-down.svg" width="47" height="45" alt="Quote"></span></p>
-                        </div>
-                    </li>
+                    </li> -->
                 </ul>
-            </div> -->
+
+            </div>
         </div>
     </div>        
 <!--Testimonial ends--></section>
@@ -193,58 +263,49 @@
 <section class="get-touch"><!--Get in Touch-->
   <div class="container">
       <div class="row">
-          <h2 class="text-center">Get in Touch</h2>
-            <p class="text-center">Donec odio uisque volutpat mattis eros ullam malesuada erat ut turpis.</p>
+          <h2 class="text-center">{{touch_hdg.heading}}</h2>
+            <p class="text-center">{{touch_hdg.text}}</p>
             <div class="form">
                 <form autocomplete="off" ng-submit="submit_form(contactUs)">
                     <fieldset>
                       <div class="grid460">
-                            <div class="form-group">      
-                                <input type="text" class="form-control" ng-model="contactUs.name" name="name" id="name" tabindex="1">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
+                            <md-input-container class="md-block" flex-gt-sm>
                                 <label>Your Name</label>
-                            </div>
+                                <input ng-model="user.name">
+                            </md-input-container>
                         </div>
                         <div class="grid460 pull-right">
-                            <div class="form-group">  
-                                <input type="text" class="form-control" ng-model="contactUs.company" name="cname" id="cname" tabindex="2">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
+                            <md-input-container class="md-block" flex-gt-sm>
                                 <label>Company Name</label>
-                            </div>
+                                <input ng-model="theMax">
+                            </md-input-container>
                         </div>
                     </fieldset>
                     <fieldset>    
                         <div class="grid460">
-                            <div class="form-group">       
-                                <input type="email" class="form-control" ng-model="contactUs.email" name="email" id="email" tabindex="3">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Email address</label>
-                            </div>
+                            <md-input-container>
+                              <label>Email address</label>
+                              <input required name="Email" ng-model="project.Email">
+                              <div ng-messages="submitted && projectForm.Email.$error">
+                                <div ng-message="required">This is required.</div>
+                              </div>
+                            </md-input-container>
                         </div>
                         <div class="grid460 pull-right">
-                            <div class="form-group">       
-                                <input type="text" class="form-control" ng-model="contactUs.contact" name="contact" id="contact" tabindex="4">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Contact No.</label>
-                            </div>
+                            <md-input-container class="md-block">
+                              <label>Contact No.</label>
+                              <input ng-model="user.contact">
+                            </md-input-container>
                         </div>
                     </fieldset>
                     <fieldset>  
-                        <div class="form-group">       
-                            <textarea class="form-control" ng-model="contactUs.message" name="message" id="message" tabindex="5"></textarea>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Message</label>
-                        </div>
+                        <md-input-container class="md-block">
+                          <label>Message</label>
+                          <textarea ng-model="user.message" columns="1" rows="5"></textarea>
+                        </md-input-container>
                     </fieldset>
                     <fieldset>    
-                        <div class="controls">
-                            <button type="submit" class="button signup button-orange" title="Submit">Submit</button>
-                        </div>
+                        <md-button class="button button-orange" ng-click="acceptOffer();"><a href="javascript:void(0);" title="Submit">Submit</a></md-button>
                     </fieldset>
                 </form>
             </div>
